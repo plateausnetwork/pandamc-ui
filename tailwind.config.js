@@ -1,10 +1,12 @@
+const themes = require("./src/Themes/index");
 module.exports = {
     mode: 'jit',
-    purge: ['./src/**/*.{js,jsx,ts,tsx}', './stories/*'],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-      extend: {},
+  content: ["{pages,src}/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  important: true, // important in prod is must be
+  theme: ["dark"],
+  plugins: [require("daisyui")],
+  daisyui: {
+      themes: ["cupcake", "dark", "cmyk","luxury",{ ...themes }],
     },
-    variants: {},
-    plugins: [],
-  }
+};
