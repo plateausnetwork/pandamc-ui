@@ -1,19 +1,21 @@
 //import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import Menu from '../../components/Menu';
 import { BiMenu, } from 'react-icons/bi';
 import Header from '../../components/Header';
 // import { Container } from './styles';
 
 export interface LayoutProps {
-    children?: React.ReactNode,
+    children?: React.ReactNode |React.ReactNode[],
     title:string,
     pageTitle?: string,
+    openSidebar:boolean,
+    setOpenSidebar:(open:boolean)=>void,
     menu?:{
         id: number,
         title: string,
         path: string,
-        icon: any,
+        icon?: any,
         visible: boolean,
         childrens:
             {
@@ -24,8 +26,8 @@ export interface LayoutProps {
             }[]
     }[]
 }
-const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu }) => {
-    const [openSidebar, setOpenSidebar] = useState(false);
+const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu,openSidebar=false,setOpenSidebar }) => {
+    // const [openSidebar, setOpenSidebar] = useState(false);
     const handleMenuButton = () => {
         setOpenSidebar(!openSidebar);
     }

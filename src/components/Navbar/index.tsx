@@ -1,7 +1,7 @@
 
 import React, { useContext} from "react";
 import { ThemeContext } from "../../themes/themeContext";
-import * as Themes from "../../themes/index";
+import * as Themes from "../../themes";
 //import Link from "next/link";
 const Navbar = () => {
   // @ts-ignore

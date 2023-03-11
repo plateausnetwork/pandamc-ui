@@ -1,10 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import * as Themes from "../../themes/index";
+import * as Themes from "../../themes";
 import { ThemeContext } from "../../themes/themeContext";
 export const DropdownThemes = () =>{
     // @ts-ignore
-    const { setTheme } = useContext(ThemeContext);
+    const { setTheme,theme } = useContext(ThemeContext);
+    {console.log("Themes",theme)}
     return (
         <div className="dropdown">
           <div
