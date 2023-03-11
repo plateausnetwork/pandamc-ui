@@ -1,4 +1,4 @@
-const themes = require("./src/Themes/index");
+import * as themes from './src/themes'
 module.exports = {
     mode: 'jit',
   content: ["{pages,src}/**/*.{js,ts,jsx,tsx}"],
