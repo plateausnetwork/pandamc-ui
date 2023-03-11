@@ -7,9 +7,7 @@
     "dist",
     "src"
   ],
-  "engines": {
-    "node": "17.x"
-  },
+  "engines": { "node": "18.x" },
   "scripts": {
     "start": "tsdx watch",
     "build-tailwind": "npx tailwindcss -o ./dist/tailwind.css --minify",
