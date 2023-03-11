@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5-0",
+  "version": "0.1.11-0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,6 +14,7 @@
     "start": "tsdx watch",
     "build-tailwind": "npx tailwindcss -o ./dist/tailwind.css --minify",
     "build:patch": "grunt version:project:prepatch && tsdx build && yarn build-tailwind && npm publish --access public",
+    "build": "tsdx build && yarn build-tailwind",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "prepare": "tsdx build",

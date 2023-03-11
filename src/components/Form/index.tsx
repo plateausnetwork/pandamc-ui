@@ -95,6 +95,7 @@ const Form: React.FC<FormProps> = ({ schema, onSubmitForm }) => {
                   </S.FieldContainer>
                 );
               case 'select':
+                 // @ts-ignore
                 return (
                   <S.FieldContainer key={key}>
                     <div className="form-control w-full max-w-xs">
@@ -106,13 +107,15 @@ const Form: React.FC<FormProps> = ({ schema, onSubmitForm }) => {
                       </label>
                       <select
                         className="select select-bordered"
-                        {...register(prop.name)}
+                        {...register(prop?.name)}
                       >
                         <option disabled selected>
-                          {prop.placeholder}
+                          {prop?.placeholder}
                         </option>
-                        {prop?.options?.map((opt: OptionProps) => (
-                          <option value={opt.value}>{opt.name}</option>
+                        {
+                          // @ts-ignore
+                        prop?.options?.map((opt: OptionProps):any => (
+                          <option value={opt?.value} key={opt.value}>{opt?.name}</option>
                         ))}
                       </select>
                       <span className="text-xs text-error">
@@ -137,6 +140,7 @@ const Form: React.FC<FormProps> = ({ schema, onSubmitForm }) => {
                     </span>
                   </S.FieldContainer>
                 );
+                // @ts-ignore
               case 'file':
                 if (fileNameProperty !== prop.name) {
                   setFileNameProperty(prop.name);
