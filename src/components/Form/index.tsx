@@ -31,7 +31,7 @@ export interface OptionProps {
   value: string | number;
   name: string;
 }
-const Form: React.FC<FormProps> = ({ schema, onSubmitForm }) => {
+export const Form = ({ schema, onSubmitForm }:FormProps) => {
   const {
     register,
     handleSubmit,
@@ -234,4 +234,3 @@ const Form: React.FC<FormProps> = ({ schema, onSubmitForm }) => {
   );
 };
 
-export default Form;
