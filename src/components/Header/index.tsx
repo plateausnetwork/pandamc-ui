@@ -1,12 +1,14 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+
 import { IoMdNotifications } from 'react-icons/io';
-import  {DropdownThemes}  from '../DropDownThemes';
+
+import { DropdownThemes } from '../DropdownThemes';
 
 export interface HeaderProps {
   pageTitle: string;
 }
-const Header: React.FC<HeaderProps> = ({ pageTitle }) => {
+export const Header = ({ pageTitle }:HeaderProps) => {
   const [mounted, setMounted] = useState(false);
   // const { theme, setTheme } = useTheme();
 
@@ -24,5 +26,3 @@ const Header: React.FC<HeaderProps> = ({ pageTitle }) => {
     </div>
   );
 };
-
-export default Header;

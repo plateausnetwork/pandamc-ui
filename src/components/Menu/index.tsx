@@ -1,6 +1,6 @@
 import React from "react"
-//import Link from 'next/link'
-import { BiDownArrow, BiRightArrow} from 'react-icons/bi';
+import Link from 'next/link'
+import { BiDownArrow, BiRightArrow } from 'react-icons/bi';
 export interface MenuProps {
     items: {
         title: string,
@@ -17,15 +17,14 @@ export interface MenuProps {
 const renderSubMenu = (childrens: any[]) => {
     return (
         childrens?.map((children) =>
-            // <Link href={children.path} key={children.id || new Date().getTime()}>
-                <a href={children.path} key={children.id || new Date().getTime()}>
+            <Link href={children.path} key={children.id || new Date().getTime()}>
+                
                     <li className="pl-6 hover:text-primary-medium cursor-pointer transition duration-200 hover:bg-neutral p-2 rounded" >{children.title}</li>
-                </a>
-            // </Link>
-            )
+                
+            </Link>)
     );
 }
-const Menu: React.FC<MenuProps> = ({ items }) => {
+export const Menu = ({ items }:MenuProps) => {
     const handleMenu = (item: any) => {
         return item.visible = !item.visible;
     }
@@ -34,7 +33,7 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
             <ul className=" mt-10">
                 {
                     menus?.map((item: any) => 
-                    <a href={item.path || ''} key={item.id || new Date().getTime()}>
+                    <Link href={item.path || ''} key={item.id || new Date().getTime()}>
                         <li className="cursor-pointer transition duration-200 hover:bg-base-300  p-2 rounded">
                             <div className="flex flex-row items-center justify-between" onClick={() => handleMenu(item)}>
                                 <div className="flex flex-row items-center gap-2">
@@ -47,7 +46,7 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
                                 {renderSubMenu(item.childrens)}
                             </ul>
                         </li>
-                    </a>
+                    </Link>
                     )
                 }
             </ul>
@@ -55,5 +54,3 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
     }
     return renderMenu(items)
 };
-
-export default Menu;

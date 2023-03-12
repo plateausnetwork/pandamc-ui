@@ -1,13 +1,14 @@
 import tw from 'tailwind-styled-components';
 export interface IButton  {
     className?:string;
-    btnType?:string;
+    btntype?:string;
+    size?:string;
 }
 
   
-const Button =  tw.button<IButton|any>`
+const Button =  tw.button<IButton>`
 btn
-${(p:any) =>{
+${(p:IButton) =>{
     let buttonApperanceType:any = {
         primary: "btn-primary",
         secondary: "btn-secondary",
@@ -18,11 +19,11 @@ ${(p:any) =>{
         link: "btn-link",
       };
     let buttonClasses: string[] | string = [];
-    if (p.btnType) buttonClasses.push(buttonApperanceType[p.btnType]);
+    if (p.btntype) buttonClasses.push(buttonApperanceType[p.btntype]);
     buttonClasses = buttonClasses.join(" ");
     return buttonClasses
 }}
-${(p:any) =>{
+${(p:IButton) =>{
     let buttonApperanceSize:any = {
         lg: "btn-lg",
         md: "btn-md",
@@ -34,7 +35,7 @@ ${(p:any) =>{
     buttonClasses = buttonClasses.join(" ");
     return buttonClasses
 }}
-${(p:any) =>p.className}
+${(p:IButton) =>p.className}
 `
 export default {
     Button

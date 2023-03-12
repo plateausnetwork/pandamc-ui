@@ -29,7 +29,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   }: IButtonProps) => {
    
     return (
-      <S.Button btnType={btnType} size={size} {...rest}>
+      <S.Button btntype={btnType} size={size} {...rest}>
         {children}
       </S.Button>
     );

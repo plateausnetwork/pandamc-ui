@@ -1,21 +1,20 @@
-//import Link from 'next/link';
-import React from 'react';
-import Menu from '../../components/Menu';
-import { BiMenu, } from 'react-icons/bi';
-import Header from '../../components/Header';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import {Menu} from '../../components/Menu';
+import { BiMenu } from 'react-icons/bi';
+import {Header} from '../../components/Header';
+//import { menu } from '../config/menu';
 // import { Container } from './styles';
 
 export interface LayoutProps {
-    children?: React.ReactNode |React.ReactNode[],
-    title:string,
-    pageTitle?: string,
-    openSidebar:boolean,
-    setOpenSidebar:(open:boolean)=>void,
-    menu?:{
+    children?: any,
+    title?: string|any,
+    contentTitle?:string,
+    menu?:  {
         id: number,
         title: string,
         path: string,
-        icon?: any,
+        icon: any,
         visible: boolean,
         childrens:
             {
@@ -26,8 +25,8 @@ export interface LayoutProps {
             }[]
     }[]
 }
-const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu,openSidebar=false,setOpenSidebar }) => {
-    // const [openSidebar, setOpenSidebar] = useState(false);
+export const Layout = ({ children, title,contentTitle,menu }:LayoutProps) => {
+    const [openSidebar, setOpenSidebar] = useState(false);
     const handleMenuButton = () => {
         setOpenSidebar(!openSidebar);
     }
@@ -36,9 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu
             {/* mobile menubar */}
             <div className="bg-neutral  flex justify-between md:hidden">
                 {/* logo */}
-                {/* <Link href="/"> */}
-                    <a className="block p-4  font-bold"  href="/">{title}</a>
-                    {/* </Link> */}
+                <Link href="/" className="block p-4  font-bold">{title}</Link>
                 {/* mobile menubutton */}
                 <button className={`p-4 focus:outline-none focus:bg-gray-700`} onClick={handleMenuButton}>
                     <BiMenu size={32} />
@@ -46,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu
             </div>
             {/* END mobile menubar */}
             {/* sidebar */}
-            {menu &&<div className={`
+            <div className={`
                           bg-neutral
                             shadow-xl
                             py-4
@@ -63,17 +60,15 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu
                             duration-200
                             easy-in-out
                             `}>
-                {/* <Link href="/"> */}
-                    <a className=" flex items-center space-x-2" href="/">
-                    <span className="text-2xl font-extrabold ">RocketAds</span>
-                </a>
-                {/* </Link> */}
-                <nav><Menu items={menu} /></nav>
-            </div>}
+                <Link href="/" className=" flex items-center space-x-2">
+                    <span className="text-2xl font-extrabold ">{title}</span>
+                </Link>
+               {menu && <nav><Menu items={menu} /></nav>}
+            </div>
             {/* END sidebar */}
             {/* content */}
             <div className="flex-1 text-2xl">
-                <Header pageTitle={pageTitle || ''} />
+                <Header pageTitle={contentTitle || ''} />
                 <div className="p-5 bg-base-100 rounded-tl- 3xl min-h-screen ">
                     {children}
                 </div>
@@ -81,5 +76,3 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle,title="My App",menu
         </div>
     );
 }
-
-export default Layout;
