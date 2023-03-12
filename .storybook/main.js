@@ -14,6 +14,9 @@ module.exports = {
       },
     },
   ],
+  core: {
+    builder: 'webpack5',
+  },
   typescript: {
     check: true, // type-check stories during Storybook build
   }
