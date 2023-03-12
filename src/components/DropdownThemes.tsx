@@ -1,9 +1,16 @@
-import React from "react";
-//import { useContext } from "react";
-//import * as Themes from "../themes/index";
-//import { ThemeContext } from "../themes/themeContext";
+import React, { useState } from "react";
+import { useContext } from "react";
+import useCustomEffect from "../hooks/useCustomEffect";
+import * as Themes from "../themes/index";
+import { ThemeContext } from "../themes/themeContext";
 export const DropdownThemes = () =>{
-   // const { setTheme } = useContext(ThemeContext);
+   const { setTheme } = useContext(ThemeContext);
+   const[t,setT]=useState("pantanal");
+useCustomEffect(()=>{
+  const html = document.getElementsByTagName("html")[0];
+  localStorage.setItem("theme", t);
+  html.setAttribute("data-theme", t);
+},[t])
     return (
         <div className="dropdown">
           <div
@@ -32,13 +39,16 @@ export const DropdownThemes = () =>{
             tabIndex={1}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52"
           >
-            {/* {Object.keys(Themes).map((key) => {
+            {Object.keys(Themes).map((key) => {
               return (
-                <li key={key} onClick={() => setTheme(key)}>
+                <li key={key} onClick={() => {
+                  setT(key)
+                  setTheme(key)
+                  }}>
                   <a className="capitalize">{key}</a>
                 </li>
               );
-            })} */}
+            })}
           </ul>
         </div>
     )

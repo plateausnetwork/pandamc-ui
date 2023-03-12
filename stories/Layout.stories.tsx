@@ -19,7 +19,7 @@ const menu = [
       title: "Company",
       path: "",
       icon: <FaBuilding size={14} className="text-th-primary-dark" />,
-      visible: true,
+      visible: false,
       childrens: [
           {
               id: 1,
@@ -34,7 +34,7 @@ const menu = [
       title: "Oracle",
       path: "",
       icon: <FaPeopleArrows size={14} className="text-th-primary-dark" />,
-      visible: true,
+      visible: false,
       childrens: [
           {
               id: 1,
@@ -49,7 +49,7 @@ const menu = [
       title: "Influencer",
       icon: <FaBuilding size={14} className="text-th-primary-dark" />,
       path: "",
-      visible: true,
+      visible: false,
       childrens: [
           {
               id: 1,

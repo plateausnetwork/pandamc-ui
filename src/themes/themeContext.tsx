@@ -35,11 +35,12 @@ export const ThemeContextProvider = ({
   /**
    * Apply theme to 'html' tag on DOM.
    */
-  const applyTheme = (theme: string = "default") => {
+ const applyTheme = (theme: string = "default") => {
+  console.log("MEUTEMA",theme)
     let newTheme = theme;
     const html = document.getElementsByTagName("html")[0];
     localStorage.setItem("theme", theme);
-    (html as any).setAttribute("data-theme", newTheme);
+    html.setAttribute("data-theme", newTheme);
   };
 
 
