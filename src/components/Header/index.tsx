@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { IoMdNotifications } from 'react-icons/io';
 
-import { DropdownThemes } from '../DropdownThemes';
+import { DropdownThemes } from '../DropDownThemes';
 
 export interface HeaderProps {
   pageTitle: string;
