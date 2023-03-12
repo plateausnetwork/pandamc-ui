@@ -5,7 +5,7 @@ import { ArgsTable } from '@storybook/addon-docs';
 import Input from '../src/components/Input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Form, { FormProps } from '../src/components/Form';
+import { FormProps,Form } from '../src/components/Form';
 import * as yup from "yup";
 import { pt } from 'yup-locale-pt';
 const meta: Meta = {
