@@ -67,9 +67,16 @@ export const Layout = ({ children, title,contentTitle,menu }:LayoutProps) => {
             </div>
             {/* END sidebar */}
             {/* content */}
+           
             <div className="flex-1 text-2xl">
-                <Header pageTitle={contentTitle || ''} />
-                <div className="p-5 bg-base-100 rounded-tl- 3xl min-h-screen ">
+            <Header pageTitle={contentTitle || ''}>
+                <div className="flex min-w-full justify-between">
+                <BiMenu size={32} />
+                <BiMenu size={32} />
+                </div>
+               
+            </Header>
+                <div className="p-0 bg-base-100 rounded-tl- 3xl min-h-screen ">
                     {children}
                 </div>
             </div>
