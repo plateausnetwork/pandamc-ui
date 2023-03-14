@@ -7,6 +7,10 @@ const CardContainer = tw.div`
   ${(props: { orientation?: string }) => props.orientation === 'horizontal' ? 'card-side' : ''}
 `;
 
+const CardImage = tw.img`
+  ${(props: { orientation?: string }) => props.orientation === 'full' ? 'w-full max-h-[700px]' : ''}
+`;
+
 const CardBody = tw.div`
  card-body
  `;
@@ -24,6 +28,7 @@ const CardButton = tw.button`
 
 export default {
     CardContainer,
+    CardImage,
     CardBody,
     CardTitle,
     CardActions,
