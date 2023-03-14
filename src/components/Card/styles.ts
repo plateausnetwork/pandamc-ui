@@ -12,7 +12,7 @@ const CardImage = tw.img`
 `;
 
 const CardBody = tw.div`
- card-body
+ card-body bg-white
  `;
 const CardTitle = tw.h2`
  card-title
