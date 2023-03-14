@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Props, Button, IButtonProps } from '../src';
-import { IButton } from '../src/components/Button/styles';
+import {  Button, IButtonProps } from '../src';
 import { ArgsTable } from '@storybook/addon-docs';
 const meta: Meta = {
   title: 'Components',

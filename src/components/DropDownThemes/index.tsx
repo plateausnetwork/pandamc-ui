@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
+=======
+import React, {useEffect} from "react";
+>>>>>>> 2f656e55731c348381225ee325bef9d3c25ff823
 import { useContext } from "react";
 import * as Themes from "../../themes";
 import { ThemeContext } from "../../themes/themeContext";
@@ -6,6 +10,7 @@ export const DropdownThemes = () =>{
     // @ts-ignore
     const { setTheme,theme } = useContext(ThemeContext);
     useEffect(()=>{
+<<<<<<< HEAD
       const applyTheme = (theme: string = "default") => {
         let newTheme = theme;
         const html = document.getElementsByTagName("html")[0];
@@ -14,6 +19,17 @@ export const DropdownThemes = () =>{
       };
       applyTheme("dark");
     })
+=======
+        const applyTheme = (theme: string = "default") => {
+            let newTheme = theme;
+            const html = document.getElementsByTagName("html")[0];
+            localStorage.setItem("theme", theme);
+            (html as any).setAttribute("data-theme", newTheme);
+        };
+        applyTheme("dark");
+    })
+
+>>>>>>> 2f656e55731c348381225ee325bef9d3c25ff823
     return (
         <div className="dropdown">
           <div
