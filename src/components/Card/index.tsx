@@ -1,47 +1,45 @@
 import React from "react";
 import S from './styles'
+
 export interface ICardProps {
     children: any;
     className?: string;
-    btnType?:
-      | "primary"
-      | "secondary"
-      | "accent"
-      | "ghost"
-      | "base"
-      | "success"
-      | "error"
-      | "link";
-    size?: 
-     |"lg"
-     |"md"
-     |"sm"
-     |"xs"
-  }
-export const Card = () => {
-  return (
-    <S.CardContainer>
-      <S.CardBody>
-        <S.CardActions>
-          <button className="btn btn-square btn-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </S.CardActions>
-        <p>We are using cookies for no reason.</p>
-      </S.CardBody>
+    orientation?:
+        | "vertical"
+        | "horizontal";
+}
+
+
+const CardVertical = ({orientation, title, description, buttonLabel, imageSrc}: any) => {
+    return <S.CardContainer orientation={orientation}>
+        <figure>
+            <img src={imageSrc} alt={title}/>
+        </figure>
+        <S.CardBody>
+            {title ? <S.CardTitle className="card-title">{title}</S.CardTitle> : null}
+            {description ? <p>{description}</p> : null}
+            {buttonLabel ? <S.CardActions>
+                <S.CardButton>{buttonLabel}</S.CardButton>
+            </S.CardActions> : null}
+        </S.CardBody>
     </S.CardContainer>
-  );
 };
+
+
+export const Card = ({orientation, title, description, buttonLabel, imageSrc}: {
+    orientation: string
+    title?: string
+    imageSrc?: string
+    buttonLabel?: string
+    description?: string
+}) => {
+    return <>
+        <CardVertical
+            orientation={orientation || 'vertical'}
+            title={title}
+            description={description}
+            buttonLabel={buttonLabel}
+            imageSrc={imageSrc}
+        />
+    </>
+}

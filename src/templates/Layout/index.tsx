@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {Menu} from '../../components/Menu';
 import { BiMenu } from 'react-icons/bi';
 import {Header} from '../../components/Header';
+import {DropdownThemes} from "../../components/DropDownThemes";
 //import { menu } from '../config/menu';
 // import { Container } from './styles';
 
@@ -67,14 +68,15 @@ export const Layout = ({ children, title,contentTitle,menu }:LayoutProps) => {
             </div>
             {/* END sidebar */}
             {/* content */}
-           
+
             <div className="flex-1 text-2xl">
             <Header pageTitle={contentTitle || ''}>
                 <div className="flex min-w-full justify-between">
                 <BiMenu size={32} />
                 <BiMenu size={32} />
+                    <DropdownThemes/>
                 </div>
-               
+
             </Header>
                 <div className="p-0 bg-base-100 rounded-tl- 3xl min-h-screen ">
                     {children}

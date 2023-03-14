@@ -1,10 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useContext } from "react";
 import * as Themes from "../../themes";
 import { ThemeContext } from "../../themes/themeContext";
 export const DropdownThemes = () =>{
     // @ts-ignore
     const { setTheme,theme } = useContext(ThemeContext);
+    useEffect(()=>{
+        const applyTheme = (theme: string = "default") => {
+            let newTheme = theme;
+            const html = document.getElementsByTagName("html")[0];
+            localStorage.setItem("theme", theme);
+            (html as any).setAttribute("data-theme", newTheme);
+        };
+        applyTheme("dark");
+    })
 
     return (
         <div className="dropdown">
