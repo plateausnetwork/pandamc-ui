@@ -1,6 +1,6 @@
 const themes = require("./src/themes");
 module.exports = {
-    mode: 'jit',
+  mode: 'jit',
   content: ["{pages,src}/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   important: true, // important in prod is must be
