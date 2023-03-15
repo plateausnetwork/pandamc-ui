@@ -2,16 +2,7 @@ import React from "react";
 import S from './styles'
 import {Card} from "../Card";
 
-export interface ICardProps {
-    children: any;
-    className?: string;
-    orientation?:
-        | "vertical"
-        | "horizontal"
-        | 'full'
-}
-
-export const CardItem = ({itemDownLeft,title, itemUpLeft, type, typeLabel, left, itemTitle, itemDescription, orientation, imageSrc, children}: {
+export const CardItem = ({itemDownLeft,title, itemUpLeft, type, typeLabel, left, itemTitle, itemDescription, orientation, imageSrc}: {
     orientation: 'vertical' | 'horizontal' | 'full'
     imageSrc?: string
     title?: string
@@ -29,7 +20,6 @@ export const CardItem = ({itemDownLeft,title, itemUpLeft, type, typeLabel, left,
         <Card
             orientation={orientation || 'vertical'}
             imageSrc={imageSrc}
-            children={children}
         >
             <div>
                 <h2 className="card-title mt-4">{title}</h2>
