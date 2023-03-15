@@ -11,8 +11,8 @@ export interface ICardProps {
 }
 
 
-const CardVertical = ({orientation, title, description, buttonLabel, imageSrc, children}: any) => {
-    return <S.CardContainer orientation={orientation}>
+const CardVertical = ({orientation, title, description, buttonLabel, imageSrc, children, onClick}: any) => {
+    return <S.CardContainer orientation={orientation} onClick={onClick}>
         <figure>
             <S.CardImage src={imageSrc} alt={title} orientation={orientation}/>
         </figure>
@@ -30,13 +30,14 @@ const CardVertical = ({orientation, title, description, buttonLabel, imageSrc, c
 };
 
 
-export const Card = ({orientation, title, description, buttonLabel, imageSrc, children}: {
+export const Card = ({orientation, onClick, title, description, buttonLabel, imageSrc, children}: {
     orientation: 'vertical' | 'horizontal' | 'full'
     title?: string
     imageSrc?: string
     buttonLabel?: string
     description?: string
     children?: any
+    onClick?: (data?: any) => void
 }) => {
     return <>
         <CardVertical
@@ -46,6 +47,7 @@ export const Card = ({orientation, title, description, buttonLabel, imageSrc, ch
             buttonLabel={buttonLabel}
             imageSrc={imageSrc}
             children={children}
+            onClick={onClick}
         />
     </>
 }

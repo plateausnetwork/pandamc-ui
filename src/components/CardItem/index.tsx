@@ -2,7 +2,7 @@ import React from "react";
 import S from './styles'
 import {Card} from "../Card";
 
-export const CardItem = ({itemDownLeft,title, itemUpLeft, type, typeLabel, left, itemTitle, itemDescription, orientation, imageSrc}: {
+export const CardItem = ({onClick, itemDownLeft,title, itemUpLeft, type, typeLabel, left, itemTitle, itemDescription, orientation, imageSrc}: {
     orientation: 'vertical' | 'horizontal' | 'full'
     imageSrc?: string
     title?: string
@@ -15,11 +15,13 @@ export const CardItem = ({itemDownLeft,title, itemUpLeft, type, typeLabel, left,
     itemTitle?: string
     itemDescription?: string
     timeLeft?: string
+    onClick?: (data?: any) => void
 }) => {
     return <>
         <Card
             orientation={orientation || 'vertical'}
             imageSrc={imageSrc}
+            onClick={onClick}
         >
             <div>
                 <h2 className="card-title mt-4">{title}</h2>
