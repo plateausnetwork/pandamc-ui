@@ -5,9 +5,9 @@ export interface IButton  {
     size?:string;
 }
 
-  
+
 const Button =  tw.button<IButton>`
-btn
+btn w-full
 ${(p:IButton) =>{
     let buttonApperanceType:any = {
         primary: "btn-primary",
