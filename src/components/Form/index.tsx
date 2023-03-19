@@ -225,7 +225,7 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
           })}
         </div>
         <div className="flex   justify-end p-4">
-        <Button size='sm' btnType='base' type='submit'>
+        <Button size='sm' btntype='base' type='submit'>
           {schema?.textButton || 'Confirm'}
         </Button>
         </div>
