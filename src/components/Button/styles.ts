@@ -17,6 +17,7 @@ ${(p:IButton) =>{
         success: "btn-success",
         error: "btn-error",
         link: "btn-link",
+        glass: "btn-glass"
       };
     let buttonClasses: string[] | string = [];
     if (p.btntype) buttonClasses.push(buttonApperanceType[p.btntype]);

@@ -11,6 +11,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
       | "base"
       | "success"
       | "error"
+      | "glass"
       | "link";
     size?: 
      |"lg"
