@@ -9,8 +9,8 @@ const meta: Meta = {
     orientation: {
       control: {
         type: 'select',
-        options: ['vertical', 'horizontal'],
-        defaultValue: 'vertical'
+        options: ['vertical', 'horizontal', 'full'],
+        defaultValue: 'full'
       }
     },
   },
@@ -20,14 +20,13 @@ const meta: Meta = {
 };
 export default meta;
 
-const Template: Story<any> = args => <Card {...args} />
+const Template: Story<any> = args => <Card {...args}/>
 export const CardComponent = Template.bind({});
 
 CardComponent.args = {
-  btnType:"secondary",
   orientation: 'vertical',
   buttonLabel: 'Send',
-  title: 'My shoes',
+  title: 'Shoes',
   description: 'Description shoes',
   imageSrc: 'https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg',
 } as IButtonProps

@@ -3,7 +3,7 @@ import S from './styles'
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: any;
     className?: string;
-    btnType?:
+    btntype?:
       | "primary"
       | "secondary"
       | "accent"
@@ -11,6 +11,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
       | "base"
       | "success"
       | "error"
+      | "glass"
       | "link";
     size?: 
      |"lg"
@@ -23,13 +24,13 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   export const Button = ({
     children,
     className = "",
-    btnType = "primary",
+    btntype = "primary",
     size="md",
     ...rest
   }: IButtonProps) => {
    
     return (
-      <S.Button btntype={btnType} size={size} {...rest}>
+      <S.Button btntype={btntype} size={size} {...rest}>
         {children}
       </S.Button>
     );

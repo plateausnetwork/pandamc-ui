@@ -1,25 +1,25 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import * as Themes from "../../themes";
 import { ThemeContext } from "../../themes/themeContext";
 export const DropdownThemes = () =>{
     // @ts-ignore
     const { setTheme,theme } = useContext(ThemeContext);
+    const applyTheme = (theme: string = "default") => {
+      let newTheme = theme;
+      const html = document.getElementsByTagName("html")[0];
+      localStorage.setItem("theme", theme);
+      (html as any).setAttribute("data-theme", newTheme);
+    };
     useEffect(()=>{
-        const applyTheme = (theme: string = "default") => {
-            let newTheme = theme;
-            const html = document.getElementsByTagName("html")[0];
-            localStorage.setItem("theme", theme);
-            (html as any).setAttribute("data-theme", newTheme);
-        };
-        applyTheme("dark");
+      
+      applyTheme("corporate");
     })
-
     return (
         <div className="dropdown">
           <div
             tabIndex={1}
-            className="flex flex-row justify-center items-center gap-2 btn btn-ghost"
+            className="flex flex-row text-neutral-content justify-center items-center gap-2 btn btn-ghost"
           >
             <svg
               width="18"
@@ -45,7 +45,7 @@ export const DropdownThemes = () =>{
           >
             {Object.keys(Themes).map((key) => {
               return (
-                <li key={key} onClick={() => setTheme(key)}>
+                <li key={key} onClick={() => applyTheme(key)}>
                   <a className="capitalize">{key}</a>
                 </li>
               );

@@ -5,9 +5,9 @@ export interface IButton  {
     size?:string;
 }
 
-  
+
 const Button =  tw.button<IButton>`
-btn
+btn w-full
 ${(p:IButton) =>{
     let buttonApperanceType:any = {
         primary: "btn-primary",
@@ -17,6 +17,7 @@ ${(p:IButton) =>{
         success: "btn-success",
         error: "btn-error",
         link: "btn-link",
+        glass: "btn-glass"
       };
     let buttonClasses: string[] | string = [];
     if (p.btntype) buttonClasses.push(buttonApperanceType[p.btntype]);
