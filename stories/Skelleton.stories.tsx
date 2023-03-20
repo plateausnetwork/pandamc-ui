@@ -19,6 +19,5 @@ const meta: Meta = {
   },
 };
 export default meta;
-
 const Template: Story<any> = (args) => <Skelleton {...args} />;
 export const SkelletonComponent = Template.bind({});
