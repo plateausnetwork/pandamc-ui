@@ -8,7 +8,7 @@ const meta: Meta = {
     cols: {
       control: {
         type: 'select',
-        options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        options: [2, 4, 8, 12, 16, 24],
         defaultValue: 'vertical',
       },
     },
