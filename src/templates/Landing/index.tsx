@@ -15,7 +15,7 @@ export const Landing = ({
   title = 'PixelWords',
   logoWidth = 50,
   logoHeight,
-  headerBgImage
+  headerBgImage,
 }: //headerBackgroundImage="https://source.unsplash.com/random/?Cryptocurrency"
 ILanding) => {
   return (
@@ -84,13 +84,12 @@ ILanding) => {
           </div>
           <div className="flex justify-center w-full lg:w-1/2  py-[20px]">
             <div className="flex w-full p-10">
-                <img
+              <img
                 src={'https://source.unsplash.com/random/?crypto'}
                 alt="img-sec2"
                 className="rounded-md border border-accent shadow-accent shadow-sm "
-                />
+              />
             </div>
-           
           </div>
         </div>
       </section>

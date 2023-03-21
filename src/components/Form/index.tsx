@@ -7,7 +7,6 @@ import Input from '../Input';
 import { styles as S } from './styles';
 import { Button } from '../Button';
 
-
 export interface FormProps {
   onSubmitForm: Function;
   schema: {
@@ -31,12 +30,12 @@ export interface OptionProps {
   value: string | number;
   name: string;
 }
-export const Form = ({ schema, onSubmitForm }:FormProps) => {
+export const Form = ({ schema, onSubmitForm }: FormProps) => {
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors }
+    formState: { errors },
   } = useForm({ resolver: yupResolver(schema.validation) });
   const [filesUrls, setFilesUrls] = useState<string[]>([]);
   const [files, setFiles] = useState<File[]>([]);
@@ -59,8 +58,8 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
     }
   }, [filesWatch]);
   const handleTrash = (key: number) => {
-    setFilesUrls(filesUrls.filter(file => filesUrls.indexOf(file) !== key));
-    setFiles(files.filter(file => files.indexOf(file) !== key));
+    setFilesUrls(filesUrls.filter((file) => filesUrls.indexOf(file) !== key));
+    setFiles(files.filter((file) => files.indexOf(file) !== key));
   };
   return (
     <>
@@ -95,14 +94,12 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
                   </S.FieldContainer>
                 );
               case 'select':
-                 // @ts-ignore
+                // @ts-ignore
                 return (
                   <S.FieldContainer key={key}>
                     <div className="form-control w-full max-w-xs">
                       <label className="label">
-                        <span className="label-text">
-                          {prop?.label}
-                        </span>
+                        <span className="label-text">{prop?.label}</span>
                         <span className="label-text-alt">Alt label</span>
                       </label>
                       <select
@@ -114,9 +111,12 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
                         </option>
                         {
                           // @ts-ignore
-                        prop?.options?.map((opt: OptionProps):any => (
-                          <option value={opt?.value} key={opt.value}>{opt?.name}</option>
-                        ))}
+                          prop?.options?.map((opt: OptionProps): any => (
+                            <option value={opt?.value} key={opt.value}>
+                              {opt?.name}
+                            </option>
+                          ))
+                        }
                       </select>
                       <span className="text-xs text-error">
                         <>{errors[prop['name']]?.message}</>
@@ -136,11 +136,11 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
                       />
                     </>
                     <span className="text-xs font-poppins text-red-500">
-                    <>{errors[prop['name']]?.message}</>
+                      <>{errors[prop['name']]?.message}</>
                     </span>
                   </S.FieldContainer>
                 );
-                // @ts-ignore
+              // @ts-ignore
               case 'file':
                 if (fileNameProperty !== prop.name) {
                   setFileNameProperty(prop.name);
@@ -169,7 +169,7 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
                       </label>
                     </div>
                     <span className="text-xs text-red-500">
-                    <>{errors[prop['name']]?.message}</>
+                      <>{errors[prop['name']]?.message}</>
                     </span>
                     <div className="grid grid-flow-row md:grid-cols-4 gap-4">
                       {filesUrls &&
@@ -225,12 +225,11 @@ export const Form = ({ schema, onSubmitForm }:FormProps) => {
           })}
         </div>
         <div className="flex   justify-end p-4">
-        <Button size='sm' btntype='base' type='submit'>
-          {schema?.textButton || 'Confirm'}
-        </Button>
+          <Button size="sm" btntype="base" type="submit">
+            {schema?.textButton || 'Confirm'}
+          </Button>
         </div>
       </form>
     </>
   );
 };
-

@@ -1,12 +1,12 @@
-import tw from 'tailwind-styled-components'
+import tw from 'tailwind-styled-components';
 
-const Label =  tw.label`
+const Label = tw.label`
 label
-`  
-const LabelText =  tw.span`
+`;
+const LabelText = tw.span`
 label-text
-`
+`;
 export default {
-    Label,
-    LabelText
-}
+  Label,
+  LabelText,
+};

@@ -42,13 +42,11 @@ const TextAreaSkeleton = () => {
 
 const GridSkeleton = () => {
   return (
-    <Grid cols={4}>
-      <>
-        <CardSkeleton />
-        <CardSkeleton />
-        <CardSkeleton />
-        <CardSkeleton />
-      </>
+    <Grid cols={2}>
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
     </Grid>
   );
 };

@@ -4,11 +4,13 @@ const CardContainer = tw.div`
   card
   bg-base-100
   shadow-xl
-  ${(props: { orientation?: string }) => props.orientation === 'horizontal' ? 'card-side' : ''}
+  ${(props: { orientation?: string }) =>
+    props.orientation === 'horizontal' ? 'card-side' : ''}
 `;
 
 const CardImage = tw.img`
-  ${(props: { orientation?: string }) => props.orientation === 'full' ? 'w-full max-h-[700px]' : ''}
+  ${(props: { orientation?: string }) =>
+    props.orientation === 'full' ? 'w-full max-h-[700px]' : ''}
 `;
 
 const CardBody = tw.div`
@@ -20,21 +22,21 @@ const CardTitle = tw.h2`
  `;
 
 const TargetLabel = tw.div`
-  ${({type}: { type?: string }) => {
-      if (type === 'rare') {
-          return 'bg-primary'
-      }
-      
-      if (type === 'founder') {
-          return 'bg-primary'
-      }
-      
-      if (type === 'limited') {
-          return 'bg-accent'
-      }
-      
-      return 'bg-orange-600'
-    }}
+  ${({ type }: { type?: string }) => {
+    if (type === 'rare') {
+      return 'bg-primary';
+    }
+
+    if (type === 'founder') {
+      return 'bg-primary';
+    }
+
+    if (type === 'limited') {
+      return 'bg-accent';
+    }
+
+    return 'bg-orange-600';
+  }}
     rounded
     mr-2
     px-3
@@ -45,14 +47,14 @@ const ContainerBody = tw.div`
     flex 
     justify-between 
     mt-8
-`
+`;
 const ContainerItemTitle = tw.div`
     font-bold
-`
+`;
 
 const ContainerItemDescription = tw.div`
     font-light
-`
+`;
 
 const CardActions = tw.div`
  card-actions 
@@ -64,14 +66,14 @@ const CardButton = tw.button`
  `;
 
 export default {
-    CardContainer,
-    CardImage,
-    CardBody,
-    ContainerBody,
-    CardTitle,
-    CardActions,
-    ContainerItemDescription,
-    ContainerItemTitle,
-    CardButton,
-    TargetLabel
-}
+  CardContainer,
+  CardImage,
+  CardBody,
+  ContainerBody,
+  CardTitle,
+  CardActions,
+  ContainerItemDescription,
+  ContainerItemTitle,
+  CardButton,
+  TargetLabel,
+};

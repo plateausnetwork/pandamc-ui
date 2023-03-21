@@ -4,11 +4,13 @@ const CardContainer = tw.div`
   card
   bg-base-100
   shadow-xl
-  ${(props: { orientation?: string }) => props.orientation === 'horizontal' ? 'card-side' : ''}
+  ${(props: { orientation?: string }) =>
+    props.orientation === 'horizontal' ? 'card-side' : ''}
 `;
 
 const CardImage = tw.img`
-  ${(props: { orientation?: string }) => props.orientation === 'full' ? 'w-full max-h-[700px]' : ''}
+  ${(props: { orientation?: string }) =>
+    props.orientation === 'full' ? 'w-full max-h-[700px]' : ''}
 `;
 
 const CardBody = tw.div`
@@ -27,10 +29,10 @@ const CardButton = tw.button`
  `;
 
 export default {
-    CardContainer,
-    CardImage,
-    CardBody,
-    CardTitle,
-    CardActions,
-    CardButton
-}
+  CardContainer,
+  CardImage,
+  CardBody,
+  CardTitle,
+  CardActions,
+  CardButton,
+};
