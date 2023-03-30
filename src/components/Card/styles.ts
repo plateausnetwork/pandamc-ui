@@ -4,7 +4,10 @@ const CardContainer = tw.div`
   card
   bg-base-100
   shadow-xl
-  ${(props: { orientation?: string }) => props.orientation === 'horizontal' ? 'card-side' : ''}
+  ${(props: { reverseOrder?: boolean }) =>
+    !props.reverseOrder ? ' ' : ' flex-row-reverse  flex '}
+  ${(props: { orientation?: string; reverseOrder?: boolean }) =>
+    props.orientation === 'horizontal' ? 'card-side' : ''}
 `;
 
 const CardBody = tw.div`
@@ -14,8 +17,9 @@ const CardTitle = tw.h2`
  card-title
  `;
 const CardActions = tw.div`
+  ${(props: { reverseOrder?: boolean }) =>
+    !props.reverseOrder ? ' justify-end ' : 'justify-start'}
  card-actions 
- justify-end
  `;
 const CardButton = tw.button`
  btn 
@@ -23,9 +27,9 @@ const CardButton = tw.button`
  `;
 
 export default {
-    CardContainer,
-    CardBody,
-    CardTitle,
-    CardActions,
-    CardButton
-}
+  CardContainer,
+  CardBody,
+  CardTitle,
+  CardActions,
+  CardButton,
+};
