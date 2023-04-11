@@ -13,11 +13,16 @@ const CardVertical = ({
   description,
   buttonLabel,
   imageSrc,
+  reverseOrder,
   children,
   onClick,
 }: any) => {
   return (
-    <S.CardContainer orientation={orientation} onClick={onClick}>
+    <S.CardContainer
+      orientation={orientation}
+      reverseOrder={reverseOrder}
+      onClick={onClick}
+    >
       <figure>
         <S.CardImage src={imageSrc} alt={title} orientation={orientation} />
       </figure>
@@ -47,6 +52,7 @@ export const Card = ({
   description,
   buttonLabel,
   imageSrc,
+  reverseOrder,
   children,
 }: {
   orientation: 'vertical' | 'horizontal' | 'full';
@@ -54,6 +60,7 @@ export const Card = ({
   imageSrc?: string;
   buttonLabel?: string;
   description?: string;
+  reverseOrder?: boolean;
   children?: any;
   onClick?: (data?: any) => void;
 }) => {
@@ -65,6 +72,7 @@ export const Card = ({
         description={description}
         buttonLabel={buttonLabel}
         imageSrc={imageSrc}
+        reverseOrder={reverseOrder}
         children={children}
         onClick={onClick}
       />
