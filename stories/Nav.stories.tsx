@@ -9,11 +9,6 @@ const meta: Meta = {
   title: 'Components',
   component: Nav,
   argTypes: {
-    theme: {
-      control: {
-        defaultValue: 'success',
-      },
-    },
     backgroundColor: {
       control: 'color',
     },
@@ -38,31 +33,28 @@ const Template: Story<INav> = (args) => (
 export const NavComponent = Template.bind({});
 
 NavComponent.args = {
-  // theme: 'success',
-  // logo: () => {
-  //   return (
-  //     <div className="mr-[100px]">
-  //       <img src={myImage} alt="Image" width="30" height="30" />
-  //     </div>
-  //   );
-  // },
-  // backgroundColor: `yellow`,
-  // textColor: `yellow`,
-  // menu: [
-  //   {
-  //     id: 1,
-  //     title: 'Home',
-  //     onClick: () => alert('Nft clicked'),
-  //   },
-  //   {
-  //     id: 3,
-  //     title: 'NFT',
-  //     onClick: () => alert('Home clicked'),
-  //   },
-  //   {
-  //     id: 4,
-  //     title: 'Accommodations',
-  //     onClick: () => alert('Accommodations clicked'),
-  //   },
-  // ],
+  logo: () => {
+    return (
+      <div className="mr-[100px]">
+        <img src={myImage} alt="Image" width="30" height="30" />
+      </div>
+    );
+  },
+  menu: [
+    {
+      id: 1,
+      title: 'Home',
+      onClick: () => alert('Nft clicked'),
+    },
+    {
+      id: 3,
+      title: 'NFT',
+      onClick: () => alert('Home clicked'),
+    },
+    {
+      id: 4,
+      title: 'Accommodations',
+      onClick: () => alert('Accommodations clicked'),
+    },
+  ],
 } as any;

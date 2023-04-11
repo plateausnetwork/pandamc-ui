@@ -1,5 +1,6 @@
 import React, { useState, ReactElement, HTMLAttributes } from 'react';
 import S from './styles';
+
 export interface INav extends HTMLAttributes<HTMLDivElement> {
   menu?: { onClick?: any; title: string; icon?: any }[];
   children?: ReactElement;
@@ -11,13 +12,13 @@ export const Nav = ({ menu, children, logo }: INav) => {
 
   return (
     <>
-      <S.NavContainer>
-        <div className="justify-start  px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <S.Nav>
+        <S.Container>
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <S.LogoContainer>
               {(logo && logo()) || (
                 <a href="javascript:void(0)">
-                  <h2 className={`text-2xl font-bold bg-transparent`}>LOGO</h2>
+                  <S.TextLogo>LOGO</S.TextLogo>
                 </a>
               )}
               <div className="md:hidden">
@@ -56,37 +57,31 @@ export const Nav = ({ menu, children, logo }: INav) => {
                   )}
                 </button>
               </div>
-            </div>
+            </S.LogoContainer>
           </div>
-          <div className="flex justify-between items-center w-full">
-            <div
-              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? 'block' : 'hidden'
-              }`}
-            >
-              <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 ml-[150px]">
+          <S.NavBody>
+            <S.WrapperNav navbar={navbar}>
+              <S.MenuList>
                 {(
                   menu || [{ onClick: () => alert(`Clicked`), title: `Option` }]
                 ).map((item: { onClick?: any; title: string }, key: number) => {
                   return (
                     <li key={key}>
-                      <a
+                      <S.LinkMenuList
                         onClick={item?.onClick}
                         href="javascript:void(0)"
-                        className={`block py-2 pl-3 cursor-pointer pr-4`}
-                        aria-current="page"
                       >
                         {item?.title}
-                      </a>
+                      </S.LinkMenuList>
                     </li>
                   );
                 })}
-              </ul>
-            </div>
+              </S.MenuList>
+            </S.WrapperNav>
             {children}
-          </div>
-        </div>
-      </S.NavContainer>
+          </S.NavBody>
+        </S.Container>
+      </S.Nav>
     </>
   );
 };
