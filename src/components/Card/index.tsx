@@ -4,7 +4,7 @@ import S from './styles';
 export interface ICardProps {
   children: any;
   className?: string;
-  orientation?: 'vertical' | 'horizontal';
+  orientation?: 'vertical' | 'horizontal' | 'full';
 }
 
 const CardVertical = ({
@@ -14,22 +14,32 @@ const CardVertical = ({
   buttonLabel,
   imageSrc,
   reverseOrder,
+  children,
+  onClick,
 }: any) => {
   return (
-    <S.CardContainer orientation={orientation} reverseOrder={reverseOrder}>
+    <S.CardContainer
+      orientation={orientation}
+      reverseOrder={reverseOrder}
+      onClick={onClick}
+    >
       <figure>
-        <img src={imageSrc} alt={title} />
+        <S.CardImage src={imageSrc} alt={title} orientation={orientation} />
       </figure>
       <S.CardBody>
-        {title ? (
-          <S.CardTitle className="card-title">{title}</S.CardTitle>
-        ) : null}
-        {description ? <p>{description}</p> : null}
-        {buttonLabel ? (
-          <S.CardActions reverseOrder={reverseOrder}>
-            <S.CardButton>{buttonLabel}</S.CardButton>
-          </S.CardActions>
-        ) : null}
+        {children ? (
+          children
+        ) : (
+          <>
+            {title ? <S.CardTitle>{title}</S.CardTitle> : null}
+            {description ? <p>{description}</p> : null}
+            {buttonLabel ? (
+              <S.CardActions>
+                <S.CardButton>{buttonLabel}</S.CardButton>
+              </S.CardActions>
+            ) : null}
+          </>
+        )}
       </S.CardBody>
     </S.CardContainer>
   );
@@ -37,18 +47,22 @@ const CardVertical = ({
 
 export const Card = ({
   orientation,
+  onClick,
   title,
   description,
   buttonLabel,
   imageSrc,
   reverseOrder,
+  children,
 }: {
-  orientation: string;
+  orientation: 'vertical' | 'horizontal' | 'full';
   title?: string;
   imageSrc?: string;
   buttonLabel?: string;
   description?: string;
   reverseOrder?: boolean;
+  children?: any;
+  onClick?: (data?: any) => void;
 }) => {
   return (
     <>
@@ -59,6 +73,8 @@ export const Card = ({
         buttonLabel={buttonLabel}
         imageSrc={imageSrc}
         reverseOrder={reverseOrder}
+        children={children}
+        onClick={onClick}
       />
     </>
   );

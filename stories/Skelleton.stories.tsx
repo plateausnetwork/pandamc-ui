@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { IButtonProps, Skelleton } from '../src';
+import { Skelleton } from '../src';
 
 const meta: Meta = {
   title: 'Components',

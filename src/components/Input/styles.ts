@@ -4,6 +4,7 @@ const InputContainer = tw.div`
 form-control
 w-full
 `;
+
 const Input = tw.input`
 input
 input-bordered

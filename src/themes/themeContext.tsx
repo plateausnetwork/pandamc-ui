@@ -1,5 +1,5 @@
-import React, { createContext, useMemo, useState } from "react";
-import useCustomEffect from "../hooks/useCustomEffect";
+import React, { createContext, useMemo, useState } from 'react';
+import useCustomEffect from '../hooks/useCustomEffect';
 
 export interface ThemeContextProps {
   theme: string;
@@ -7,7 +7,7 @@ export interface ThemeContextProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-  theme: "default",
+  theme: 'default',
   setTheme: () => {},
 });
 
@@ -19,7 +19,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
  * @returns ReactNode
  */
 export const ThemeContextProvider = ({
-  value = "default",
+  value = 'default',
   children,
 }: {
   value?: string;
@@ -28,21 +28,20 @@ export const ThemeContextProvider = ({
   const [theme, setTheme] = useState(value);
 
   useCustomEffect(() => {
-    const storeTheme = localStorage.getItem("theme");
-    applyTheme(storeTheme || "default");
+    const storeTheme = localStorage.getItem('theme');
+    applyTheme(storeTheme || 'default');
   }, []);
 
   /**
    * Apply theme to 'html' tag on DOM.
    */
- const applyTheme = (theme: string = "default") => {
-  console.log("MEUTEMA",theme)
+  const applyTheme = (theme: string = 'default') => {
+    console.log('MEUTEMA', theme);
     let newTheme = theme;
-    const html = document.getElementsByTagName("html")[0];
-    localStorage.setItem("theme", theme);
-    html.setAttribute("data-theme", newTheme);
+    const html = document.getElementsByTagName('html')[0];
+    localStorage.setItem('theme', theme);
+    html.setAttribute('data-theme', newTheme);
   };
-
 
   const handleThemeChange = (theme: string) => {
     setTheme(theme);

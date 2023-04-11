@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import S from './styles';
 export interface IErrorMessage {
   text: string;
 }
-const Label = ({ text='' }: IErrorMessage) => {
+const Label = ({ text = '' }: IErrorMessage) => {
   return (
     <S.Label>
       <S.LabelText>{text}</S.LabelText>

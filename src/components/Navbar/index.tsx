@@ -1,8 +1,6 @@
-
-import React, { useContext} from "react";
-import { ThemeContext } from "../../themes/themeContext";
-import * as Themes from "../../themes";
-//import Link from "next/link";
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../themes/themeContext';
+import * as Themes from '../../themes';
 const Navbar = () => {
   // @ts-ignore
   const { setTheme } = useContext(ThemeContext);
@@ -31,14 +29,10 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52"
           >
             <li>
-              {/* <Link href="/"> */}
-                <a href="/">Homepage</a>
-              {/* </Link> */}
+              <a href="/">Homepage</a>
             </li>
             <li>
-              {/* <Link href={"/login"}> */}
-                <a href={"/login"}>Login</a>
-              {/* </Link> */}
+              <a href={'/login'}>Login</a>
             </li>
             <li>
               <a>About</a>

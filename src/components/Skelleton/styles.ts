@@ -4,7 +4,8 @@ const CardContainer = tw.div`
   card
   bg-base-100
   shadow-xl
-  ${(props: { orientation?: string }) => props.orientation === 'horizontal' ? 'card-side' : ''}
+  ${(props: { orientation?: string }) =>
+    props.orientation === 'horizontal' ? 'card-side' : ''}
 `;
 
 const CardBody = tw.div`
@@ -23,9 +24,9 @@ const CardButton = tw.button`
  `;
 
 export default {
-    CardContainer,
-    CardBody,
-    CardTitle,
-    CardActions,
-    CardButton
-}
+  CardContainer,
+  CardBody,
+  CardTitle,
+  CardActions,
+  CardButton,
+};

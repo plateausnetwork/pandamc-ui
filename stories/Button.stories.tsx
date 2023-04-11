@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Props, Button, IButtonProps } from '../src';
-import { IButton } from '../src/components/Button/styles';
+import {  Button, IButtonProps } from '../src';
 import { ArgsTable } from '@storybook/addon-docs';
 const meta: Meta = {
   title: 'Components',
@@ -12,9 +11,6 @@ const meta: Meta = {
         type: 'text',
       },
     },
-    btnType:{
-      options:["primary","secondary"]
-    } 
   },
   parameters: {
     controls: { expanded: true },
@@ -28,7 +24,3 @@ const Template: Story<IButtonProps> = args => <Button {...args}  >Button</Button
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const ButtonComponent = Template.bind({});
-
-ButtonComponent.args = {
-  btnType:"secondary"
-} as IButtonProps
