@@ -26,6 +26,10 @@ const NavBody = tw.div`
 flex justify-between items-center w-full
 `;
 
+const ToggleMenu = tw.button`
+p-2 rounded-md outline-none focus:border-gray-400 focus:border
+`;
+
 const NavHeader = tw.div`
     flex
     items-center
@@ -68,5 +72,6 @@ export default {
   LinkMenuList,
   NavBody,
   MenuList,
+  ToggleMenu,
   WrapperNav,
 };

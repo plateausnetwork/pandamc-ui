@@ -22,10 +22,7 @@ export const Nav = ({ menu, children, logo }: INav) => {
                 </a>
               )}
               <div className="md:hidden">
-                <button
-                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                  onClick={() => setNavbar(!navbar)}
-                >
+                <S.ToggleMenu onClick={() => setNavbar(!navbar)}>
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +52,7 @@ export const Nav = ({ menu, children, logo }: INav) => {
                       />
                     </svg>
                   )}
-                </button>
+                </S.ToggleMenu>
               </div>
             </S.LogoContainer>
           </div>
