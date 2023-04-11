@@ -1,48 +1,23 @@
-import React, { useState, ReactElement } from 'react';
-export interface NavProperties {
-  section: string;
-}
-
-const themes = {
-  primary: {
-    bg: 'bg-primary',
-    text: 'text-white',
-  },
-  secondary: {
-    bg: 'bg-secondary',
-    text: 'text-white',
-  },
-  success: {
-    bg: 'bg-success',
-    text: 'text-white',
-  },
-};
-
-export const Nav = ({
-  theme,
-  menu,
-  children,
-  logo,
-}: {
-  theme?: 'primary' | `secondary` | `success`;
+import React, { useState, ReactElement, HTMLAttributes } from 'react';
+import S from './styles';
+export interface INav extends HTMLAttributes<HTMLDivElement> {
   menu?: { onClick?: any; title: string; icon?: any }[];
   children?: ReactElement;
   logo?: () => void;
-}) => {
-  const themeSelected = themes[theme || 'secondary'];
+}
+
+export const Nav = ({ menu, children, logo }: INav) => {
   const [navbar, setNavbar] = useState(false);
 
   return (
     <>
-      <nav className={`w-full shadow ${themeSelected.bg}`}>
+      <S.NavContainer>
         <div className="justify-start  px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {(logo && logo()) || (
                 <a href="javascript:void(0)">
-                  <h2 className={`text-2xl font-bold ${themeSelected.text}`}>
-                    LOGO
-                  </h2>
+                  <h2 className={`text-2xl font-bold bg-transparent`}>LOGO</h2>
                 </a>
               )}
               <div className="md:hidden">
@@ -53,7 +28,7 @@ export const Nav = ({
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`w-6 h-6 ${themeSelected.text}`}
+                      className={`w-6 h-6`}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -66,7 +41,7 @@ export const Nav = ({
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`w-6 h-6 ${themeSelected.text}`}
+                      className={`w-6 h-6`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -98,7 +73,7 @@ export const Nav = ({
                       <a
                         onClick={item?.onClick}
                         href="javascript:void(0)"
-                        className={`block py-2 pl-3 cursor-pointer pr-4 ${themeSelected.text}`}
+                        className={`block py-2 pl-3 cursor-pointer pr-4`}
                         aria-current="page"
                       >
                         {item?.title}
@@ -111,7 +86,7 @@ export const Nav = ({
             {children}
           </div>
         </div>
-      </nav>
+      </S.NavContainer>
     </>
   );
 };

@@ -9,4 +9,11 @@ const ShadowedComponent: any = tw.div`
                   : theme?.bg}
     `;
 
-export default { ShadowedComponent };
+const NavContainer = tw.nav`
+    w-full 
+    shadow 
+    bg-neutral
+    text-accent
+`;
+
+export default { ShadowedComponent, NavContainer };
