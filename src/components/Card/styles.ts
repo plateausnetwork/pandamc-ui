@@ -14,11 +14,11 @@ const CardImage = tw.img`
 `;
 
 const CardBody = tw.div`
- card-body bg-neutral
+ card-body 
  `;
 const CardTitle = tw.h2`
  card-title
- text-primary
+ text-secondary
  `;
 const CardActions = tw.div`
  card-actions 
