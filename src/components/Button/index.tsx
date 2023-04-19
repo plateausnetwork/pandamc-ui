@@ -17,14 +17,14 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = ({
-  children,
+  children = <span />,
   className = '',
   btntype = 'primary',
   size = 'md',
   ...rest
 }: IButtonProps) => {
   return (
-    <S.Button btntype={btntype} size={size} {...rest}>
+    <S.Button btntype={btntype} size={size || `md`} {...rest}>
       {children}
     </S.Button>
   );

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Table, ITableProps } from '../src';
-import data from './../src/data/ads.json';
+import { Table } from '../src';
+import { ITableProps } from '../src/components/Table';
+import { ads } from '../src/data/ads';
 
 const columnDefinitions = [
   {
@@ -46,5 +47,5 @@ export const TableComponent = Template.bind({});
 TableComponent.args = {
   typeTable: 'table-zebra',
   columns: columnDefinitions,
-  data: data,
+  data: ads,
 } as ITableProps;

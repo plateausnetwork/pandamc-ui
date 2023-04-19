@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { BiTrash } from 'react-icons/bi';
-import Input from '../Input';
+import { Input } from '../Input';
 import { styles as S } from './styles';
 import { Button } from '../Button';
 
