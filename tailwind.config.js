@@ -7,7 +7,14 @@ module.exports = {
   ],
   darkMode: 'class',
   important: true, // important in prod is must be
-  theme: ['dark'],
+  theme: {
+    extend: {
+      backgroundImage: {
+        'hero-banner': 'url("https://turis-app.vercel.app/banner.jpg")',
+        'footer-texture': "url('/img/footer-texture.png')",
+      },
+    },
+  },
   plugins: [
     require('@tailwindcss/typography'),
     require('daisyui'),
