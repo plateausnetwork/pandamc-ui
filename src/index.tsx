@@ -7,5 +7,6 @@ export * from './components/Nav';
 export * from './components/Form';
 export * from './components/Grid';
 export * from './components/Skelleton';
+export * from './components/Table';
 export * from './templates/Layout';
 export * from './templates/Landing';
