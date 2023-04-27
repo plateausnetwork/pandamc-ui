@@ -13,8 +13,8 @@ import { Form } from './components/Form';
 import { Grid } from './components/Grid';
 import { Skelleton } from './components/Skelleton';
 import { Table } from './components/Table';
-import { Layout } from './templates/Layout';
-import { Landing } from './templates/Landing';
+// import { Layout } from './templates/Layout';
+// import { Landing } from './templates/Landing';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   /** custom content, defaults to 'the snozzberries taste like snozzberries' */
@@ -33,6 +33,6 @@ export {
   Grid,
   Skelleton,
   Table,
-  Layout,
-  Landing,
+  // Layout,
+  // Landing,
 };
