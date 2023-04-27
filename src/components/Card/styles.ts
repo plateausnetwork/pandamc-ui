@@ -16,10 +16,11 @@ const CardImage = tw.img`
 `;
 
 const CardBody = tw.div`
- card-body bg-white
+ card-body 
  `;
 const CardTitle = tw.h2`
  card-title
+ text-secondary
  `;
 const CardActions = tw.div`
   ${(props: { reverseOrder?: boolean }) =>
