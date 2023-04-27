@@ -109,9 +109,16 @@
     "webpack": "^5.66.0"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
     "@tailwindcss/typography": "^0.5.9",
-    "next": "^13.2.4"
+    "@tanstack/react-table": "^8.8.5",
+    "daisyui": "^2.51.6",
+    "next": "^13.2.4",
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.8.0",
+    "tailwind-styled-components": "^2.2.0",
+    "yup": "^1.1.1"
   }
 }
