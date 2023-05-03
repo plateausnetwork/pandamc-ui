@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Progress, IButtonProps } from '../src';
+import { Progress } from '../src';
+import { IButtonProps } from '../src/components/Button';
 
 const meta: Meta = {
   title: 'Components',

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { INav, Nav } from '../src';
+import { Nav } from '../src';
 import { LogoContainer, TextLanguage, PipeLanguage } from '../src/styles';
 // @ts-ignore
 import myImage from './../src/assets/ether.png';
+import { INav } from '../src/components/Nav';
 
 const meta: Meta = {
   title: 'Components',

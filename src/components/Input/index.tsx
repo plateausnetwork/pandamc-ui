@@ -11,7 +11,7 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegister<FieldValues>;
 }
 
-const Input = ({
+export const Input = ({
   label,
   name,
   placeholder,
@@ -31,4 +31,3 @@ const Input = ({
     </S.InputContainer>
   );
 };
-export default Input;
