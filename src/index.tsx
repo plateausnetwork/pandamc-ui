@@ -15,6 +15,7 @@ import { Skelleton } from './components/Skelleton';
 import { Table } from './components/Table';
 import { Nav } from './components/Nav';
 import { Hero } from './components/Hero';
+import { Footer } from './components/Footer';
 // import { Layout } from './templates/Layout';
 // import { Landing } from './templates/Landing';
 
@@ -37,6 +38,7 @@ export {
   Table,
   Nav,
   Hero,
+  Footer,
   // Layout,
   // Landing,
 };
