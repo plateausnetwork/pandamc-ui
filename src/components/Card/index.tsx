@@ -1,13 +1,14 @@
 import React from 'react';
 import S from './styles';
+import { FiArrowRight } from 'react-icons/fi';
 
 export interface ICardProps {
   children: any;
   className?: string;
-  orientation?: 'vertical' | 'horizontal' | 'full';
+  orientation?: 'vertical' | 'horizontal' | 'full' | 'info';
 }
 
-const CardVertical = ({
+const CardCustom = ({
   orientation,
   title,
   description,
@@ -16,7 +17,39 @@ const CardVertical = ({
   reverseOrder,
   children,
   onClick,
+  width,
+  height,
+  marginLeft,
+  borderRadius,
 }: any) => {
+  if (orientation === 'info') {
+    return (
+      <div
+        className="card card-side bg-base-100 shadow-xl items-center"
+        onClick={onClick}
+      >
+        <figure>
+          <S.CardImage
+            src={imageSrc}
+            alt={title}
+            orientation={orientation}
+            style={{
+              width: 140 || width,
+              height: 60 || height,
+              marginLeft: 10 || marginLeft,
+              borderRadius: 10 || borderRadius,
+            }}
+          />
+        </figure>
+        <S.CardBody>
+          <div className="flex items-center justify-between w-full cursor-pointer">
+            <h2 className="card-title">{buttonLabel}</h2>
+            <div className="card-actions">{<FiArrowRight />}</div>
+          </div>
+        </S.CardBody>
+      </div>
+    );
+  }
   return (
     <S.CardContainer
       orientation={orientation}
@@ -55,7 +88,7 @@ export const Card = ({
   reverseOrder,
   children,
 }: {
-  orientation: 'vertical' | 'horizontal' | 'full';
+  orientation: 'vertical' | 'horizontal' | 'full' | 'info';
   title?: string;
   imageSrc?: string;
   buttonLabel?: string;
@@ -66,7 +99,7 @@ export const Card = ({
 }) => {
   return (
     <>
-      <CardVertical
+      <CardCustom
         orientation={orientation || 'vertical'}
         title={title}
         description={description}
